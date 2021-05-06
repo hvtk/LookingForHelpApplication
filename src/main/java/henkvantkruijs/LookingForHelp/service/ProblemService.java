@@ -11,6 +11,5 @@ public interface ProblemService {   // hierin ga je definieren wat je allemaal m
     List<Problem> getProblemsAgeGroupStartsWith(String ageGroup);
     void save(Problem problem);
     void deleteById(long id);
-
 }
 
