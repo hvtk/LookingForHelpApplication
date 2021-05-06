@@ -14,22 +14,22 @@ public class Problem {
         private long id;
 
         @Column
-        private String homePage;
+        private String page;
 
         @Column
         private String ageGroup;
 
         @Column
-        private String name;
+        private String problemName;
 //    Type: problemTypes;     verwijst naar enum. moet nog gemaakt worden.
 
         //getters en setters
-        public String getHomePage() {
-            return homePage;
+        public String getPage() {
+            return page;
         }
 
-        public void setHomePage(String homePage) {
-            this.homePage = homePage;
+        public void setPage(String homePage) {
+            this.page = page;
         }
 
         public String getAgeGroup() {
@@ -40,12 +40,12 @@ public class Problem {
             this.ageGroup = ageGroup;
         }
 
-        public String getName() {
-            return name;
+        public String getProblemName() {
+            return problemName;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setProblemName(String name) {
+            this.problemName = problemName;
         }
 
         public void setId(Long id) {
