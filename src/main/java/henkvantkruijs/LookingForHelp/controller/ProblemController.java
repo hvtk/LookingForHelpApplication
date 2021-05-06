@@ -24,9 +24,9 @@ public class ProblemController {
         return new ResponseEntity<>(problems, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/problems/ageGroup/{ageGroup}")
-    public ResponseEntity<Object> getProblems(@PathVariable("ageGroup") String ageGroup) {
-        List<Problem> problems = problemService.getProblemsAgeGroupStartsWith(ageGroup);
+    @GetMapping(value = "/problems/{problemName}")
+    public ResponseEntity<Object> getProblems(@PathVariable("problemName") String problemName) {
+        List<Problem> problems = problemService.getProblemsProblemNameStartsWith(problemName);
         return new ResponseEntity<>(problems, HttpStatus.OK);
     }
 

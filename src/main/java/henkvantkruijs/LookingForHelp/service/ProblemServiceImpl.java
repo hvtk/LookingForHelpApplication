@@ -20,8 +20,8 @@ public class ProblemServiceImpl implements ProblemService {
     }
 
     @Override
-    public List<Problem> getProblemsAgeGroupStartsWith(String ageGroup) {
-        return problemRepository.findAllByAgeGroupStartsWith(ageGroup);
+    public List<Problem> getProblemsProblemNameStartsWith(String ageGroup) {
+        return problemRepository.findAllByProblemNameStartsWith(ageGroup);
     }
 
     @Override

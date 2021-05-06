@@ -8,7 +8,7 @@ public interface ProblemService {   // hierin ga je definieren wat je allemaal m
 
     List<Problem> getAllProblems();
     Problem getProblem(long id);
-    List<Problem> getProblemsAgeGroupStartsWith(String ageGroup);
+    List<Problem> getProblemsProblemNameStartsWith(String problemName);
     void save(Problem problem);
     void deleteById(long id);
 }

@@ -1,16 +1,16 @@
-insert into problem (page) values ('Children');
-insert into problem (page) values ('Adults');
-insert into problem (page) values ('Elderly');
-insert into problem (page) values ('Youth');
-insert into problem (page) values ('sign_in');
-insert into problem (page) values ('sign_up');
-insert into problem (page) values ('home');
-insert into problem (page) values ('after_search_query');
+#insert into problem (page) values ('Children');
+#insert into problem (page) values ('Adults');
+#insert into problem (page) values ('Elderly');
+#insert into problem (page) values ('Youth');
+#insert into problem (page) values ('sign_in');
+#insert into problem (page) values ('sign_up');
+#insert into problem (page) values ('home');
+#insert into problem (page) values ('after_search_query');
 
-insert into problem (age_group) values ('Children');
-insert into problem (age_group) values ('Adults');
-insert into problem (age_group) values ('Elderly');
-insert into problem (age_group) values ('Youth');
+#insert into problem (age_group) values ('Children');
+#insert into problem (age_group) values ('Adults');
+#insert into problem (age_group) values ('Elderly');
+#insert into problem (age_group) values ('Youth');
 
 insert into problem (problem_name) values ('Self-confidence');
 insert into problem (problem_name) values ('Stressed-out');
@@ -27,7 +27,7 @@ insert into problem (problem_name) values ('Abdominal-pains');
 insert into problem (problem_name) values ('Headache');
 insert into problem (problem_name) values ('Constant-tiredness');
 insert into problem (problem_name) values ('Palpitations');
-insert into problem (problem_name) values ('Intestinal-complains');
+insert into problem (problem_name) values ('Intestinal-complains');5
 insert into problem (problem_name) values ('Sore-muscles-and-joints');
 insert into problem (problem_name) values ('Dometic-violence');
 insert into problem (problem_name) values ('Child-abuse');
