@@ -16,7 +16,7 @@ public class TakeActionServiceImpl implements TakeActionService {
 
     @Override
     public List<TakeAction> getAllTakeActions() {
-        return TakeActionRepository.findAll();
+        return takeActionRepository.findAll();
     }
 
     @Override
@@ -30,7 +30,7 @@ public class TakeActionServiceImpl implements TakeActionService {
             return takeActionRepository.findById(id).get();
         }
         else {
-            throw new RecordNotFoundException("No problem with id " + id);
+            throw new RecordNotFoundException("No TakeAction with id " + id);
         }
     }
 

@@ -1,6 +1,7 @@
 package henkvantkruijs.LookingForHelp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 //POJO plain old java object
@@ -21,6 +22,9 @@ public class Problem {
 
         @Column
         private String problemName;
+
+        @OneToMany
+        List<TakeAction> takeActions;
 //    Type: problemTypes;     verwijst naar enum. moet nog gemaakt worden.
 
         //getters en setters

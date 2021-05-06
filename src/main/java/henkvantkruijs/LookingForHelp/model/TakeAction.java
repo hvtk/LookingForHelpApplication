@@ -15,6 +15,9 @@ public class TakeAction {
     @Column
     private String takeActionWebbAddress;
 
+    @ManyToOne
+    Problem problem;
+
     public long getId() {
         return id;
     }
