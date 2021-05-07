@@ -22,7 +22,7 @@ public class PageController {
     }
 
     @GetMapping(value = "/pages/{pageName}")
-    public ResponseEntity<Object> getPages(@PathVariable("pageName") String problemName) {
+    public ResponseEntity<Object> getPages(@PathVariable("pageName") String pageName) {
         List<Page> pages = pageService.getPagesPageNameStartsWith(pageName);
         return new ResponseEntity<>(pages, HttpStatus.OK);
     }

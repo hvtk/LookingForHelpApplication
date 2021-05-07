@@ -4,9 +4,11 @@ import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
 import henkvantkruijs.LookingForHelp.model.Page;
 import henkvantkruijs.LookingForHelp.repository.PageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PageServiceImpl implements PageService {
 
     @Autowired

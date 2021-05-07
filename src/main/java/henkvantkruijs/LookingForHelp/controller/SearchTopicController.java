@@ -22,7 +22,7 @@ public class SearchTopicController {
         return new ResponseEntity<>(searchTopics, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/searchTopics/{agegroup}")
+    @GetMapping(value = "/searchTopics/{ageGroup}")
     public ResponseEntity<Object> getSearchTopics(@PathVariable("ageGroup") String ageGroup) {
         List<SearchTopic> searchTopics = searchTopicService.getSearchTopicsAgeGroupStartsWith(ageGroup);
         return new ResponseEntity<>(searchTopics, HttpStatus.OK);
