@@ -30,7 +30,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder();           // neads an bcrypt password. use www.browserling.com to bcrypt.
     }
 
     // secure the endpoints with HTTP Basic authentication
