@@ -19,6 +19,10 @@ public class Problem {
 
         @OneToMany
         List<TakeAction> takeActions;
+
+        @ManyToOne
+        Page page;
+
 //    Type: problemTypes;     verwijst naar enum. moet nog gemaakt worden.
 
         //getters en setters

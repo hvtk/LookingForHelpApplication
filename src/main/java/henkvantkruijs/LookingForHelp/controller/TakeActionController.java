@@ -21,7 +21,7 @@ public class TakeActionController {
         return new ResponseEntity<>(takeActions, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/takeActions/{takeActionName}")
+    @GetMapping(value = "/takeActions/takeActionName/{takeActionName}")
     public ResponseEntity<Object> getTakeActions(@PathVariable("takeActionName") String takeActionName) {
         List<TakeAction> takeActions = takeActionService.getTakeActionsTakeActionNameStartsWith(takeActionName);
         return new ResponseEntity<>(takeActions, HttpStatus.OK);

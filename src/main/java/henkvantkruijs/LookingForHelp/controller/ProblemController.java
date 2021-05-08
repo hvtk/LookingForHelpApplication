@@ -24,7 +24,7 @@ public class ProblemController {
         return new ResponseEntity<>(problems, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/problems/{problemName}")
+    @GetMapping(value = "/problems/problemName/{problemName}")
     public ResponseEntity<Object> getProblems(@PathVariable("problemName") String problemName) {
         List<Problem> problems = problemService.getProblemsProblemNameStartsWith(problemName);
         return new ResponseEntity<>(problems, HttpStatus.OK);

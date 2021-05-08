@@ -1,6 +1,7 @@
 package henkvantkruijs.LookingForHelp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Page {
@@ -13,6 +14,12 @@ public class Page {
 
     @Column
     private String pageName;
+
+    @OneToMany
+    List<Problem> problem;
+
+    @OneToOne
+    SearchTopic searchTopic;
 
     //getters en setters
 

@@ -14,6 +14,9 @@ public class SearchTopic {
     @Column
     private String ageGroup;
 
+    @OneToOne
+    Page page;
+
     //getters en setters
 
     public String getAgeGroup() {

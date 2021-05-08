@@ -21,7 +21,7 @@ public class PageController {
         return new ResponseEntity<>(pages, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/pages/{pageName}")
+    @GetMapping(value = "/pages/pageName/{pageName}")
     public ResponseEntity<Object> getPages(@PathVariable("pageName") String pageName) {
         List<Page> pages = pageService.getPagesPageNameStartsWith(pageName);
         return new ResponseEntity<>(pages, HttpStatus.OK);
