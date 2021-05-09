@@ -1,5 +1,8 @@
 package henkvantkruijs.LookingForHelp.controller;
 
+import henkvantkruijs.LookingForHelp.payload.AuthenticationRequest;
+import henkvantkruijs.LookingForHelp.payload.AuthenticationResponse;
+import henkvantkruijs.LookingForHelp.service.CustomUserDetailsService;
 import henkvantkruijs.LookingForHelp.utils.JwtUtil;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;

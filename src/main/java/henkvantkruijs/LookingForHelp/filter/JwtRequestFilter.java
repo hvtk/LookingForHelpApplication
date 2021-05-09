@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.filter;
 
+import henkvantkruijs.LookingForHelp.service.CustomUserDetailsService;
 import henkvantkruijs.LookingForHelp.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
