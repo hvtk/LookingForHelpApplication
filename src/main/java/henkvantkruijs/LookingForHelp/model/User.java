@@ -30,7 +30,7 @@ public class User {
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.EAGER)
-    private Set<henkvantkruijs.LookingForHelp.model.Authority.Authority> authorities = new HashSet<>();
+    private Set<henkvantkruijs.LookingForHelp.model.Authority> authorities = new HashSet<>();
 
     public String getUsername() { return username; }
     public void setUsername(String username) {
