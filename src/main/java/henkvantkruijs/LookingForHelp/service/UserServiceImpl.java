@@ -55,6 +55,9 @@ public class UserServiceImpl implements henkvantkruijs.LookingForHelp.service.Us
         if (!userRepository.existsById(username)) throw new RecordNotFoundException();
         User user = userRepository.findById(username).get();
         user.setPassword(newUser.getPassword());
+        user.setPostalCode(newUser.getPostalCode());
+        user.setAge(newUser.getAge());
+        user.setApikey(newUser.getApikey());
         userRepository.save(user);
     }
 

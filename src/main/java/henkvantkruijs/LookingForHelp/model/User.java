@@ -22,7 +22,10 @@ public class User {
     private String apikey;
 
     @Column
-    private String email;
+    private String postalCode;
+
+    @Column
+    private String age;
 
     @OneToMany(
             targetEntity = henkvantkruijs.LookingForHelp.model.Authority.class,
@@ -46,8 +49,22 @@ public class User {
     public void setEnabled(boolean enabled) { this.enabled = enabled; }
     public String getApikey() { return apikey; }
     public void setApikey(String apikey) { this.apikey = apikey; }
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email;}
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
 
     public Set<Authority> getAuthorities() { return authorities; }
     public void addAuthority(Authority authority) {
