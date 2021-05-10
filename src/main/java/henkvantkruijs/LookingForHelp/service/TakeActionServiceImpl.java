@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
 import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
 import henkvantkruijs.LookingForHelp.model.TakeAction;
 import henkvantkruijs.LookingForHelp.repository.TakeActionRepository;
@@ -30,7 +31,7 @@ public class TakeActionServiceImpl implements TakeActionService {
             return takeActionRepository.findById(id).get();
         }
         else {
-            throw new RecordNotFoundException("No TakeAction with id " + id);
+            throw new IdNotFoundException("No TakeAction with id " + id);
         }
     }
 

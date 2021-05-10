@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
 import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
 import henkvantkruijs.LookingForHelp.model.SearchTopic;
 import henkvantkruijs.LookingForHelp.repository.SearchTopicRepository;
@@ -30,7 +31,7 @@ public class SearchTopicServiceImpl implements SearchTopicService {
             return searchTopicRepository.findById(id).get();
         }
         else {
-            throw new RecordNotFoundException("No searchTopic with id " + id);
+            throw new IdNotFoundException("No searchTopic with id " + id);
         }
     }
 

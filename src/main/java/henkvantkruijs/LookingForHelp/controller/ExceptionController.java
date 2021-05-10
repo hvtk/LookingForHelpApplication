@@ -1,6 +1,7 @@
 package henkvantkruijs.LookingForHelp.controller;
 
 import henkvantkruijs.LookingForHelp.exception.BadRequestException;
+import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
 import henkvantkruijs.LookingForHelp.exception.NotAuthorizedException;
 import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -34,5 +35,11 @@ public class ExceptionController {
     @ExceptionHandler(value = UsernameNotFoundException.class)
     public ResponseEntity<Object> exception(UsernameNotFoundException exception) {
         return ResponseEntity.badRequest().build();
+    }
+
+    @ExceptionHandler(value = IdNotFoundException.class)
+    public ResponseEntity<Object> exception(IdNotFoundException exception) {
+        String message = exception.getMessage();
+        return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
 }

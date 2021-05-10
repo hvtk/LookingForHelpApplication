@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
 import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
 import henkvantkruijs.LookingForHelp.model.Problem;
 import henkvantkruijs.LookingForHelp.repository.ProblemRepository;
@@ -30,7 +31,7 @@ public class ProblemServiceImpl implements ProblemService {
             return problemRepository.findById(id).get();
         }
         else {
-            throw new RecordNotFoundException("No problem with id " + id);
+            throw new IdNotFoundException("No problem with id " + id);
         }
     }
 

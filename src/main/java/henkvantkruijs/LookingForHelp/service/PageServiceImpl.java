@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
 import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
 import henkvantkruijs.LookingForHelp.model.Page;
 import henkvantkruijs.LookingForHelp.repository.PageRepository;
@@ -30,7 +31,7 @@ public class PageServiceImpl implements PageService {
             return pageRepository.findById(id).get();
         }
         else {
-            throw new RecordNotFoundException("No page with id " + id);
+            throw new IdNotFoundException("No page with id " + id);
         }
     }
 
