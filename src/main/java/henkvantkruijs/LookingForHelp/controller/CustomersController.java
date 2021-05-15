@@ -16,16 +16,4 @@ public class CustomersController {
     public ResponseEntity<Object> getMessage() {
         return new ResponseEntity<>("SECURED REST endpoint: /customers", HttpStatus.OK);
     }
-
-    @RequestMapping("/login")
-    public String login(@RequestParam(value = "error", required = false) String error, @RequestParam(value = "logout", required = false) String logout, Model model) {
-
-        if (error != null) {
-            model.addAttribute("error", "Wrong username or password!");
-        }
-        if (logout != null) {
-            model.addAttribute("msg", "You have successfully logged out!");
-        }
-        return "login";
-    }
 }
