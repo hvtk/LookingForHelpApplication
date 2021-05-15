@@ -49,11 +49,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
         //JWT token authentication
         http
+                .cors().and()  //added
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/customers/**").hasRole("USER")
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/users/**").hasRole("ADMIN")
+                .antMatchers("/users/**").authenticated()//.hasRole("ADMIN")
                 .antMatchers("/authenticated").authenticated()
                 .antMatchers("/authenticate").permitAll()
                 .anyRequest().permitAll()

@@ -50,11 +50,15 @@ public class UserServiceImpl implements henkvantkruijs.LookingForHelp.service.Us
         userRepository.deleteById(username);
     }
 
+    // update the database table user with the user information
     @Override
     public void updateUser(String username, User newUser) {
         if (!userRepository.existsById(username)) throw new RecordNotFoundException();
         User user = userRepository.findById(username).get();
         user.setPassword(newUser.getPassword());
+        user.setPostalCode(newUser.getPostalCode());
+        user.setAge(newUser.getAge());
+        user.setApikey(newUser.getApikey());
         userRepository.save(user);
     }
 
