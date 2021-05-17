@@ -1,6 +1,7 @@
 package henkvantkruijs.LookingForHelp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class TakeAction {
@@ -21,6 +22,9 @@ public class TakeAction {
 
     @ManyToOne
     Problem problem;
+
+    @OneToMany
+    List<MediaType> mediaType;
 
     public long getId() {
         return id;
