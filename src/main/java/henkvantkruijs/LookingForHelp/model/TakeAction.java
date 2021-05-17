@@ -15,6 +15,10 @@ public class TakeAction {
     @Column
     private String takeActionWebbAddress;
 
+    @Column
+    @Enumerated(EnumType.STRING)
+    private TakeActionTypes takeActionTypes;
+
     @ManyToOne
     Problem problem;
 
@@ -40,5 +44,13 @@ public class TakeAction {
 
     public void setTakeActionWebbAddress(String takeActionWebbAddress) {
         this.takeActionWebbAddress = takeActionWebbAddress;
+    }
+
+    public TakeActionTypes getTakeActionTypes() {
+        return takeActionTypes;
+    }
+
+    public void setTakeActionTypes(TakeActionTypes takeActionTypes) {
+        this.takeActionTypes = takeActionTypes;
     }
 }
