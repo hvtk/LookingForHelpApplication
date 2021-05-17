@@ -17,6 +17,10 @@ public class Problem {
         @Column
         private String problemName;
 
+        @Column
+        @Enumerated(EnumType.STRING)
+        private ProblemTypes problemTypes;
+
         @OneToMany
         List<TakeAction> takeActions;
 
@@ -41,5 +45,13 @@ public class Problem {
 
         public Long getId() {
             return id;
+        }
+
+        public ProblemTypes getProblemTypes() {
+                return problemTypes;
+        }
+
+        public void setProblemTypes(ProblemTypes problemTypes) {
+                this.problemTypes = problemTypes;
         }
 }

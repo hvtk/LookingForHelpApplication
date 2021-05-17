@@ -4,6 +4,7 @@ import henkvantkruijs.LookingForHelp.model.Page;
 
 import java.util.List;
 
+// hierin wordt gedefinieerd wat je met de "page" wil doen.
 public interface PageService {
 
     List<Page> getAllPages();
