@@ -1,7 +1,9 @@
 package henkvantkruijs.LookingForHelp.controller;
 
 import henkvantkruijs.LookingForHelp.model.TakeAction;
+import henkvantkruijs.LookingForHelp.model.Treatment;
 import henkvantkruijs.LookingForHelp.service.TakeActionService;
+import henkvantkruijs.LookingForHelp.service.TreatmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,35 +15,35 @@ import java.util.List;
 public class TreatmentController {
 
     @Autowired
-    private TakeActionService takeActionService;
+    private TreatmentService treatmentService;
 
-    @GetMapping(value = "/takeActions")
-    public ResponseEntity<Object> getTakeActions() {
-        List<TakeAction> takeActions = takeActionService.getAllTakeActions();
-        return new ResponseEntity<>(takeActions, HttpStatus.OK);
+    @GetMapping(value = "/treatments")
+    public ResponseEntity<Object> getTreatments() {
+        List<Treatment> treatments = treatmentService.getAllTreatments();
+        return new ResponseEntity<>(treatments, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/takeActions/takeActionName/{takeActionName}")
-    public ResponseEntity<Object> getTakeActions(@PathVariable("takeActionName") String takeActionName) {
-        List<TakeAction> takeActions = takeActionService.getTakeActionsTakeActionNameStartsWith(takeActionName);
-        return new ResponseEntity<>(takeActions, HttpStatus.OK);
+    @GetMapping(value = "/treatments/treatmentName/{treatmentName}")
+    public ResponseEntity<Object> getTreatments(@PathVariable("treatmentName") String treatmentName) {
+        List<Treatment> treatments = treatmentService.getTreatmentsTreatmentNameStartsWith(treatmentName);
+        return new ResponseEntity<>(treatments, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/takeActions/{id}")
-    public ResponseEntity<Object> getTakeAction(@PathVariable("id") long id) {
-        return new ResponseEntity<>(takeActionService.getTakeAction(id), HttpStatus.OK);
+    @GetMapping(value = "/treatments/{id}")
+    public ResponseEntity<Object> getTreatment(@PathVariable("id") long id) {
+        return new ResponseEntity<>(treatmentService.getTreatment(id), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/takeActions")
-    public ResponseEntity<Object> createTakeAction(@RequestBody TakeAction takeAction) {
-        takeActionService.save(takeAction);
-        return new ResponseEntity<>("takeAction created", HttpStatus.CREATED);
+    @PostMapping(value = "/treatments")
+    public ResponseEntity<Object> createTreatment(@RequestBody Treatment treatment) {
+        treatmentService.save(treatment);
+        return new ResponseEntity<>("Treatment created", HttpStatus.CREATED);
     }
 
-    @DeleteMapping(value = "/takeActions/{id}")
+    @DeleteMapping(value = "/treatments/{id}")
     public ResponseEntity<Object> deleteTakeAction(@PathVariable("id") long id) {
-        takeActionService.deleteById(id);
-        return new ResponseEntity<>("TakeAction deleted", HttpStatus.OK);
+        treatmentService.deleteById(id);
+        return new ResponseEntity<>("Treatment deleted", HttpStatus.OK);
     }
 }
 

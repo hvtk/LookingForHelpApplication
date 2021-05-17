@@ -2,46 +2,48 @@ package henkvantkruijs.LookingForHelp.service;
 
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
 import henkvantkruijs.LookingForHelp.model.TakeAction;
+import henkvantkruijs.LookingForHelp.model.Treatment;
 import henkvantkruijs.LookingForHelp.repository.TakeActionRepository;
+import henkvantkruijs.LookingForHelp.repository.TreatmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class TreatmentServiceImpl implements TakeActionService {
+public class TreatmentServiceImpl implements TreatmentService {
 
     @Autowired
-    private TakeActionRepository takeActionRepository;
+    private TreatmentRepository treatmentRepository;
 
     @Override
-    public List<TakeAction> getAllTakeActions() {
-        return takeActionRepository.findAll();
+    public List<Treatment> getAllTreatments() {
+        return treatmentRepository.findAll();
     }
 
     @Override
-    public List<TakeAction> getTakeActionsTakeActionNameStartsWith(String takeActionName) {
-        return takeActionRepository.findAllByTakeActionNameStartsWith(takeActionName);
+    public List<Treatment> getTreatmentsTreatmentNameStartsWith(String treatmentName) {
+        return treatmentRepository.findAllByTreatmentNameStartsWith(treatmentName);
     }
 
     @Override
-    public TakeAction getTakeAction(long id) {
-        if (takeActionRepository.existsById(id)) {
-            return takeActionRepository.findById(id).get();
+    public Treatment getTreatment(long id) {
+        if (treatmentRepository.existsById(id)) {
+            return treatmentRepository.findById(id).get();
         }
         else {
-            throw new IdNotFoundException("No TakeAction with id " + id);
+            throw new IdNotFoundException("No Treatment with id " + id);
         }
     }
 
     @Override
-    public void save(TakeAction takeAction) {
-        takeActionRepository.save(takeAction);
+    public void save(Treatment treatment) {
+        treatmentRepository.save(treatment);
     }
 
     @Override
     public void deleteById(long id) {
-        takeActionRepository.deleteById(id);
+        treatmentRepository.deleteById(id);
     }
 }
 

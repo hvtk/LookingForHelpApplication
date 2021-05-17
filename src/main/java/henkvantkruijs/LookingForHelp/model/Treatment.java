@@ -10,14 +10,14 @@ public class Treatment {
     private long id;
 
     @Column
-    private String takeActionName;
+    private String treatmentName;
 
     @Column
-    private String takeActionWebbAddress;
+    private String treatmentWebbAddress;
 
     @Column
     @Enumerated(EnumType.STRING)
-    private TakeActionTypes takeActionTypes;
+    private TreatmentTypes treatmentTypes;
 
     @ManyToOne
     Problem problem;
@@ -30,27 +30,27 @@ public class Treatment {
         this.id = id;
     }
 
-    public String getTakeActionName() {
-        return takeActionName;
+    public String getTreatmentName() {
+        return treatmentName;
     }
 
-    public void setTakeActionName(String takeActionName) {
-        this.takeActionName = takeActionName;
+    public void setTreatmentName(String treatmentName) {
+        this.treatmentName = treatmentName;
     }
 
-    public String getTakeActionWebbAddress() {
-        return takeActionWebbAddress;
+    public String getTreatmentWebbAddress() {
+        return treatmentWebbAddress;
     }
 
-    public void setTakeActionWebbAddress(String takeActionWebbAddress) {
-        this.takeActionWebbAddress = takeActionWebbAddress;
+    public void setTreatmentWebbAddress(String treatmentWebbAddress) {
+        this.treatmentWebbAddress = treatmentWebbAddress;
     }
 
-    public TakeActionTypes getTakeActionTypes() {
-        return takeActionTypes;
+    public TreatmentTypes getTreatmentTypes() {
+        return treatmentTypes;
     }
 
-    public void setTakeActionTypes(TakeActionTypes takeActionTypes) {
-        this.takeActionTypes = takeActionTypes;
+    public void setTreatmentTypes(TreatmentTypes treatmentTypes) {
+        this.treatmentTypes = treatmentTypes;
     }
 }

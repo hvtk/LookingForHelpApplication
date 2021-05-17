@@ -22,12 +22,16 @@ public class Problem {
         private ProblemTypes problemTypes;
 
         @OneToMany
-        List<TakeAction> takeActions;
+        List<TakeAction> takeAction;
+
+        @OneToMany
+        List<AidWorker> aidWorker;
+
+        @OneToMany
+        List<Treatment> treatment;
 
         @ManyToOne
         Page page;
-
-//    Type: problemTypes;     verwijst naar enum. moet nog gemaakt worden.
 
         //getters en setters
 
