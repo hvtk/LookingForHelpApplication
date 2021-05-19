@@ -1,5 +1,9 @@
 package henkvantkruijs.LookingForHelp.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -43,6 +47,7 @@ public class User {
         return password;
     }
     public void setPassword(String password) {
+        // setPassword slaat nu de hash van het wachtwoord op ipv het wachtwoord zelf.
         this.password = password;
     }
     public boolean isEnabled() { return enabled;}

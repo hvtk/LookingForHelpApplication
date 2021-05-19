@@ -28,6 +28,13 @@ public class UserController {
         return ResponseEntity.ok().body(userService.getUser(username));
     }
 
+    @PostMapping(value = "/signup")
+    public ResponseEntity<Object> signUpUser(@RequestBody User user) {
+        String newUsername = userService.createUser(user);
+
+        return ResponseEntity.ok().body(userService.getUser(newUsername));
+    }
+
     @PostMapping(value = "")
     public ResponseEntity<Object> createUser(@RequestBody User user) {
         String newUsername = userService.createUser(user);

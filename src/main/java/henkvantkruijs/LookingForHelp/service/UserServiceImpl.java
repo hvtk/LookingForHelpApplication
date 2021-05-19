@@ -7,6 +7,7 @@ import henkvantkruijs.LookingForHelp.repository.UserRepository;
 import henkvantkruijs.LookingForHelp.utils.RandomStringGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -41,6 +42,7 @@ public class UserServiceImpl implements UserService {
     public String createUser(User user) {
         String randomString = RandomStringGenerator.generateAlphaNumeric(20);
         user.setApikey(randomString);
+        user.setPassword((new BCryptPasswordEncoder()).encode(user.getPassword()));
         User newUser = userRepository.save(user);
         return newUser.getUsername();
     }
@@ -55,7 +57,9 @@ public class UserServiceImpl implements UserService {
     public void updateUser(String username, User newUser) {
         if (!userRepository.existsById(username)) throw new RecordNotFoundException();
         User user = userRepository.findById(username).get();
-        user.setPassword(newUser.getPassword());
+        //user.setPassword(newUser.getPassword());
+        // Sla de gehashte versie van het wachtwoord op ipv de plaintext versie
+        user.setPassword((new BCryptPasswordEncoder()).encode(newUser.getPassword()));
         user.setPostalCode(newUser.getPostalCode());
         user.setAge(newUser.getAge());
         user.setApikey(newUser.getApikey());
