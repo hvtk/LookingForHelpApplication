@@ -52,10 +52,17 @@ insert into media_information (media_types) values ('Video');
 insert into media_information (media_types) values ('Twitter');
 insert into media_information (media_types) values ('Facebook');
 
+insert into media_option (media_option_name) values ('ChatOption');
+insert into media_option (media_option_name) values ('WhatsappOption');
+insert into media_option (media_option_name) values ('TwitterOption');
+insert into media_option (media_option_name) values ('FacebookOption');
+insert into media_option (media_option_name) values ('YoutubeOption');
+insert into media_option (media_option_name) values ('VideoOption');
+insert into media_option (media_option_name) values ('CommunitiesOption');
+
 insert into users (username, password, enabled, age, postal_code) values ('user', '$2a$10$r7vOUjHFH34pmJHRcMC/lOHtpIMAF1/p.iu4SIVjxDJ7V3AeHWoUG', TRUE, 5, '1234AB');
 insert into users (username, password, enabled, age, postal_code) values ('admin','$2a$10$r7vOUjHFH34pmJHRcMC/lOHtpIMAF1/p.iu4SIVjxDJ7V3AeHWoUG', TRUE, 5, '1234AB');
 insert into users (username, password, enabled, age, postal_code) values ('henk','$2a$10$r7vOUjHFH34pmJHRcMC/lOHtpIMAF1/p.iu4SIVjxDJ7V3AeHWoUG', TRUE, 5, '1234AB');
-
 
 insert into authorities (username, authority) values ('user', 'ROLE_USER');
 insert into authorities (username, authority) values ('admin', 'ROLE_USER');

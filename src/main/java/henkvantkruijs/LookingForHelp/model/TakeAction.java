@@ -26,6 +26,9 @@ public class TakeAction {
     @OneToMany
     List<MediaInformation> mediaInformation;
 
+    @OneToMany
+    List<MediaOption> mediaOption;
+
     public long getId() {
         return id;
     }

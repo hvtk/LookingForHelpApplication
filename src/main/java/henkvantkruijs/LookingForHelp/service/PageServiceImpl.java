@@ -1,7 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
-import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
 import henkvantkruijs.LookingForHelp.model.Page;
 import henkvantkruijs.LookingForHelp.repository.PageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
