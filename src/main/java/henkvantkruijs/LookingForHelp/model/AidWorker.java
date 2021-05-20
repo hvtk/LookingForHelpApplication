@@ -1,6 +1,7 @@
 package henkvantkruijs.LookingForHelp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class AidWorker {
@@ -21,6 +22,9 @@ public class AidWorker {
 
     @ManyToOne
     Problem problem;
+
+    @OneToMany
+    List<Expertise> expertise;
 
     public long getId() {
         return id;
