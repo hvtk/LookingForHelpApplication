@@ -30,9 +30,6 @@ public class Problem {
         @OneToMany
         List<Treatment> treatment;
 
-        @ManyToOne
-        Page page;
-
         //getters en setters
 
         public String getProblemName() {

@@ -15,12 +15,6 @@ public class Page {
     @Column
     private String pageName;
 
-    @OneToMany
-    List<Problem> problem;
-
-    @OneToOne
-    SearchTopic searchTopic;
-
     //getters en setters
 
     public String getPageName() {

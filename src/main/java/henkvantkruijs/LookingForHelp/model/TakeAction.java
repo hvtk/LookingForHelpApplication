@@ -24,7 +24,7 @@ public class TakeAction {
     Problem problem;
 
     @OneToMany
-    List<MediaType> mediaType;
+    List<MediaInformation> mediaInformation;
 
     public long getId() {
         return id;
