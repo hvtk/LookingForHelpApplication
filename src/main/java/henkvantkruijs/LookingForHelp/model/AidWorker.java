@@ -26,6 +26,10 @@ public class AidWorker {
     @OneToMany
     List<Expertise> expertise;
 
+    @OneToMany
+    List<CostsAidWorkerTreatment> costsAidWorkerTreatment;
+
+
     public long getId() {
         return id;
     }
