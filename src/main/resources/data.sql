@@ -12,35 +12,10 @@ insert into page (page_name) values ('Sign-up');
 insert into page (page_name) values ('Home');
 insert into page (page_name) values ('After-search-query');
 
-insert into problem (problem_name, problem_types) values ('Self-confidence', 'Emotional-problems');
-insert into problem (problem_name, problem_types) values ('Stressed-out', 'Emotional-problems');
-insert into problem (problem_name, problem_types) values ('Worry-about','Emotional-problems' );
-insert into problem (problem_name, problem_types) values ('Guilty-feelings', 'Emotional-problems');
-insert into problem (problem_name, problem_types) values ('Loneliness', 'Emotional-problems');
-insert into problem (problem_name, problem_types) values ('Fear', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Panic', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Depression', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Addiction', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Burnout', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Suicide', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Abdominal-pains', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Headache', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Constant-tiredness', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Palpitations', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Intestinal-complains','Physical-complaints' );
-insert into problem (problem_name, problem_types) values ('Sore-muscles-and-joints', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Domestic-violence', 'Physical-violence');
-insert into problem (problem_name, problem_types) values ('Child-abuse', 'Physical-violence');
-insert into problem (problem_name, problem_types) values ('Violence', 'Physical-violence');
-
 insert into take_action (take_action_types) values ('Testing');
 insert into take_action (take_action_types) values ('Activities');
 insert into take_action (take_action_types) values ('Research-information');
 insert into take_action (take_action_types) values ('Can-do-it-yourself');
-
-insert into aid_worker (aid_worker_types) values ('Institution');
-insert into aid_worker (aid_worker_types) values ('Organisation');
-insert into aid_worker (aid_worker_types) values ('Specialist');
 
 insert into treatment (treatment_types) values ('Therapy');
 insert into treatment (treatment_types) values ('Clinics');

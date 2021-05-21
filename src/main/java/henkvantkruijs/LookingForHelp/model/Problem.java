@@ -55,4 +55,32 @@ public class Problem {
         public void setProblemTypes(ProblemTypes problemTypes) {
                 this.problemTypes = problemTypes;
         }
+
+        public void setId(long id) {
+                this.id = id;
+        }
+
+        public List<TakeAction> getTakeAction() {
+                return takeAction;
+        }
+
+        public void setTakeAction(List<TakeAction> takeAction) {
+                this.takeAction = takeAction;
+        }
+
+        public List<AidWorker> getAidWorker() {
+                return aidWorker;
+        }
+
+        public void setAidWorker(List<AidWorker> aidWorker) {
+                this.aidWorker = aidWorker;
+        }
+
+        public List<Treatment> getTreatment() {
+                return treatment;
+        }
+
+        public void setTreatment(List<Treatment> treatment) {
+                this.treatment = treatment;
+        }
 }

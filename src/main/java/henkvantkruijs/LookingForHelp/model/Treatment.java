@@ -60,4 +60,28 @@ public class Treatment {
     public void setTreatmentTypes(TreatmentTypes treatmentTypes) {
         this.treatmentTypes = treatmentTypes;
     }
+
+    public Problem getProblem() {
+        return problem;
+    }
+
+    public void setProblem(Problem problem) {
+        this.problem = problem;
+    }
+
+    public List<Expertise> getExpertise() {
+        return expertise;
+    }
+
+    public void setExpertise(List<Expertise> expertise) {
+        this.expertise = expertise;
+    }
+
+    public List<CostsAidWorkerTreatment> getCostsAidWorkerTreatment() {
+        return costsAidWorkerTreatment;
+    }
+
+    public void setCostsAidWorkerTreatment(List<CostsAidWorkerTreatment> costsAidWorkerTreatment) {
+        this.costsAidWorkerTreatment = costsAidWorkerTreatment;
+    }
 }

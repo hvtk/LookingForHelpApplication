@@ -6,3 +6,4 @@ public enum AidWorkerTypes {
     ORGANISATION,
     SPECIALIST,
 }
+

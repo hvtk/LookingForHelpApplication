@@ -60,4 +60,28 @@ public class TakeAction {
     public void setTakeActionTypes(TakeActionTypes takeActionTypes) {
         this.takeActionTypes = takeActionTypes;
     }
+
+    public Problem getProblem() {
+        return problem;
+    }
+
+    public void setProblem(Problem problem) {
+        this.problem = problem;
+    }
+
+    public List<MediaInformation> getMediaInformation() {
+        return mediaInformation;
+    }
+
+    public void setMediaInformation(List<MediaInformation> mediaInformation) {
+        this.mediaInformation = mediaInformation;
+    }
+
+    public List<MediaOption> getMediaOption() {
+        return mediaOption;
+    }
+
+    public void setMediaOption(List<MediaOption> mediaOption) {
+        this.mediaOption = mediaOption;
+    }
 }

@@ -44,4 +44,20 @@ public class CostsAidWorkerTreatment {
     public void setAnswerYesOrNo(String answerYesOrNo) {
         this.answerYesOrNo = answerYesOrNo;
     }
+
+    public AidWorker getAidWorker() {
+        return aidWorker;
+    }
+
+    public void setAidWorker(AidWorker aidWorker) {
+        this.aidWorker = aidWorker;
+    }
+
+    public Treatment getTreatment() {
+        return treatment;
+    }
+
+    public void setTreatment(Treatment treatment) {
+        this.treatment = treatment;
+    }
 }

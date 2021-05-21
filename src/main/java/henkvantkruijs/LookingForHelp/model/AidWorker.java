@@ -20,15 +20,11 @@ public class AidWorker {
     @Enumerated(EnumType.STRING)
     private AidWorkerTypes aidWorkerTypes;
 
-    @ManyToOne
-    Problem problem;
+ //   @ManyToOne
+  //  Problem problem;
 
-    @OneToMany
-    List<Expertise> expertise;
-
-    @OneToMany
-    List<CostsAidWorkerTreatment> costsAidWorkerTreatment;
-
+  //  @OneToMany
+  //  List<Expertise> expertise;
 
     public long getId() {
         return id;
@@ -61,4 +57,20 @@ public class AidWorker {
     public void setAidWorkerTypes(AidWorkerTypes aidWorkerTypes) {
         this.aidWorkerTypes = aidWorkerTypes;
     }
+
+   /* public Problem getProblem() {
+        return problem;
+    }
+
+    public void setProblem(Problem problem) {
+        this.problem = problem;
+    }
+
+    public List<Expertise> getExpertise() {
+        return expertise;
+    }
+
+    public void setExpertise(List<Expertise> expertise) {
+        this.expertise = expertise;
+    }*/
 }

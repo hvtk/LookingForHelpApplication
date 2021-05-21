@@ -44,4 +44,20 @@ public class MediaOption {
     public void setMediaOptionAvailable(String mediaOptionAvailable) {
         this.mediaOptionAvailable = mediaOptionAvailable;
     }
+
+    public TakeAction getTakeAction() {
+        return takeAction;
+    }
+
+    public void setTakeAction(TakeAction takeAction) {
+        this.takeAction = takeAction;
+    }
+
+    public AidWorker getAidWorker() {
+        return aidWorker;
+    }
+
+    public void setAidWorker(AidWorker aidWorker) {
+        this.aidWorker = aidWorker;
+    }
 }

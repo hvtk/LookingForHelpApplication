@@ -53,4 +53,12 @@ public class MediaInformation {
     public void setTakeAction(TakeAction takeAction) {
         this.takeAction = takeAction;
     }
+
+    public MediaTypes getMediaTypes() {
+        return mediaTypes;
+    }
+
+    public void setMediaTypes(MediaTypes mediaTypes) {
+        this.mediaTypes = mediaTypes;
+    }
 }

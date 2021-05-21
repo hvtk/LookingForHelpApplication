@@ -34,4 +34,16 @@ public class SearchTopic {
     public Long getId() {
         return id;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Page getPage() {
+        return page;
+    }
+
+    public void setPage(Page page) {
+        this.page = page;
+    }
 }
