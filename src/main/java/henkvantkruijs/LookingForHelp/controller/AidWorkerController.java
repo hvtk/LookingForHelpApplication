@@ -1,9 +1,7 @@
 package henkvantkruijs.LookingForHelp.controller;
 
 import henkvantkruijs.LookingForHelp.model.AidWorker;
-import henkvantkruijs.LookingForHelp.model.TakeAction;
 import henkvantkruijs.LookingForHelp.service.AidWorkerService;
-import henkvantkruijs.LookingForHelp.service.TakeActionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,4 +44,5 @@ public class AidWorkerController {
         return new ResponseEntity<>("AidWorker deleted", HttpStatus.OK);
     }
 }
+
 
