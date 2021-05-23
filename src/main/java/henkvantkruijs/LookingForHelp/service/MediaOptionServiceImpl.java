@@ -1,6 +1,8 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.DatabaseErrorException;
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
+import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
 import henkvantkruijs.LookingForHelp.model.MediaOption;
 import henkvantkruijs.LookingForHelp.repository.MediaOptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,8 @@ public class MediaOptionServiceImpl implements MediaOptionService {
     @Override
     public MediaOption getMediaOption(long id) {
         if (mediaOptionRepository.existsById(id)) {
-            return mediaOptionRepository.findById(id).get();
+            return mediaOptionRepository.findById(id).orElse(null);
+        //    return mediaOptionRepository.findById(id).get();
         }
         else {
             throw new IdNotFoundException("No MediaOption with id " + id);
@@ -35,13 +38,38 @@ public class MediaOptionServiceImpl implements MediaOptionService {
     }
 
     @Override
+    public long createMediaOption(MediaOption mediaOption) {
+        MediaOption newMediaOption = mediaOptionRepository.save(mediaOption);
+        return newMediaOption.getId();
+    }
+
+    /*@Override
     public void save(MediaOption mediaOption) {
         mediaOptionRepository.save(mediaOption);
-    }
+    }*/
 
     @Override
     public void deleteById(long id) {
         mediaOptionRepository.deleteById(id);
     }
+
+  /*  @Override
+    public void updateMediaOption(long id, MediaOption mediaOption) {
+        if (mediaOptionRepository.existsById(id)) {
+            try {
+                MediaOption existingMediaOption = mediaOptionRepository.findById(id).orElse(null);
+                existingMediaOption.setMediaOptionName(mediaOption.getMediaOptionName());
+                existingMediaOption.setMediaOptionAvailable(mediaOption.getMediaOptionAvailable());
+                mediaOptionRepository.save(existingMediaOption);
+            }
+            catch (Exception ex) {
+                throw new DatabaseErrorException();
+            }
+        }
+        else {
+            throw new RecordNotFoundException();
+        }
+    }*/
+
 }
 

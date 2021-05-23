@@ -32,11 +32,17 @@ public class MediaOptionController {
         return new ResponseEntity<>(mediaOptionService.getMediaOption(id), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/mediaOptions")
+     @PostMapping(value = "/mediaOptions")
+    public ResponseEntity<Object> createMediaOption(@RequestBody MediaOption mediaOption) {
+        long newId = mediaOptionService.createMediaOption(mediaOption);
+        return new ResponseEntity<>(newId, HttpStatus.CREATED);
+    }
+
+   /*@PostMapping(value = "/mediaOptions")
     public ResponseEntity<Object> createMediaOption(@RequestBody MediaOption mediaOption) {
         mediaOptionService.save(mediaOption);
         return new ResponseEntity<>("MediaOption created", HttpStatus.CREATED);
-    }
+    }*/
 
     @DeleteMapping(value = "/mediaOption/{id}")
     public ResponseEntity<Object> deleteMediaOption(@PathVariable("id") long id) {

@@ -15,11 +15,11 @@ public class MediaOption {
     @Column
     private String mediaOptionAvailable;
 
-    @ManyToOne
-    TakeAction takeAction;
+   // @ManyToOne
+   // TakeAction takeAction;
 
-    @ManyToOne
-    AidWorker aidWorker;
+  //  @ManyToOne
+ //   AidWorker aidWorker;
 
     public long getId() {
         return id;
@@ -45,7 +45,7 @@ public class MediaOption {
         this.mediaOptionAvailable = mediaOptionAvailable;
     }
 
-    public TakeAction getTakeAction() {
+  /*  public TakeAction getTakeAction() {
         return takeAction;
     }
 
@@ -59,5 +59,5 @@ public class MediaOption {
 
     public void setAidWorker(AidWorker aidWorker) {
         this.aidWorker = aidWorker;
-    }
+    }*/
 }

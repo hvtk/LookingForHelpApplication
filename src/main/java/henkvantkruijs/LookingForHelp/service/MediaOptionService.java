@@ -9,6 +9,8 @@ public interface MediaOptionService {
     List<MediaOption> getAllMediaOptions();
     MediaOption getMediaOption(long id);
     List<MediaOption> getMediaOptionsMediaOptionNameStartsWith(String mediaOptionName);
-    void save(MediaOption mediaOption);
+    long createMediaOption(MediaOption mediaOption);
+    //void save(MediaOption mediaOption);
     void deleteById(long id);
+   // void updateMediaOption(long id, MediaOption mediaOption);  //toegevoegd
 }
