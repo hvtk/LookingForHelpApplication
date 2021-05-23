@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -32,17 +34,22 @@ public class MediaOptionController {
         return new ResponseEntity<>(mediaOptionService.getMediaOption(id), HttpStatus.OK);
     }
 
-     @PostMapping(value = "/mediaOptions")
+   /* @PostMapping(value = "/mediaOptions")
     public ResponseEntity<Object> createMediaOption(@RequestBody MediaOption mediaOption) {
         long newId = mediaOptionService.createMediaOption(mediaOption);
-        return new ResponseEntity<>(newId, HttpStatus.CREATED);
-    }
 
-   /*@PostMapping(value = "/mediaOptions")
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/mediaOptions/{id}")
+                .buildAndExpand(newId).toUri();
+
+        return ResponseEntity.created(location).body(location);
+    }*/
+
+
+    @PostMapping(value = "/mediaOptions")
     public ResponseEntity<Object> createMediaOption(@RequestBody MediaOption mediaOption) {
         mediaOptionService.save(mediaOption);
         return new ResponseEntity<>("MediaOption created", HttpStatus.CREATED);
-    }*/
+    }
 
     @DeleteMapping(value = "/mediaOption/{id}")
     public ResponseEntity<Object> deleteMediaOption(@PathVariable("id") long id) {

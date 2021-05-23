@@ -4,8 +4,11 @@ import henkvantkruijs.LookingForHelp.exception.DatabaseErrorException;
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
 import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
 import henkvantkruijs.LookingForHelp.model.MediaOption;
+import henkvantkruijs.LookingForHelp.model.User;
 import henkvantkruijs.LookingForHelp.repository.MediaOptionRepository;
+import henkvantkruijs.LookingForHelp.utils.RandomStringGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +18,13 @@ public class MediaOptionServiceImpl implements MediaOptionService {
 
     @Autowired
     private MediaOptionRepository mediaOptionRepository;
+
+   /* @Override
+    public long createMediaOption(MediaOption mediaOption) {
+        MediaOption newMediaOption = mediaOptionRepository.save(mediaOption);
+        return newMediaOption.getId();
+    } */
+
 
     @Override
     public List<MediaOption> getAllMediaOptions() {
@@ -38,15 +48,9 @@ public class MediaOptionServiceImpl implements MediaOptionService {
     }
 
     @Override
-    public long createMediaOption(MediaOption mediaOption) {
-        MediaOption newMediaOption = mediaOptionRepository.save(mediaOption);
-        return newMediaOption.getId();
-    }
-
-    /*@Override
     public void save(MediaOption mediaOption) {
         mediaOptionRepository.save(mediaOption);
-    }*/
+    }
 
     @Override
     public void deleteById(long id) {
