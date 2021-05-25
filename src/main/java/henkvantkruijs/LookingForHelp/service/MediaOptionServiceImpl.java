@@ -19,13 +19,6 @@ public class MediaOptionServiceImpl implements MediaOptionService {
     @Autowired
     private MediaOptionRepository mediaOptionRepository;
 
-   /* @Override
-    public long createMediaOption(MediaOption mediaOption) {
-        MediaOption newMediaOption = mediaOptionRepository.save(mediaOption);
-        return newMediaOption.getId();
-    } */
-
-
     @Override
     public List<MediaOption> getAllMediaOptions() {
         return mediaOptionRepository.findAll();
@@ -56,24 +49,6 @@ public class MediaOptionServiceImpl implements MediaOptionService {
     public void deleteById(long id) {
         mediaOptionRepository.deleteById(id);
     }
-
-  /*  @Override
-    public void updateMediaOption(long id, MediaOption mediaOption) {
-        if (mediaOptionRepository.existsById(id)) {
-            try {
-                MediaOption existingMediaOption = mediaOptionRepository.findById(id).orElse(null);
-                existingMediaOption.setMediaOptionName(mediaOption.getMediaOptionName());
-                existingMediaOption.setMediaOptionAvailable(mediaOption.getMediaOptionAvailable());
-                mediaOptionRepository.save(existingMediaOption);
-            }
-            catch (Exception ex) {
-                throw new DatabaseErrorException();
-            }
-        }
-        else {
-            throw new RecordNotFoundException();
-        }
-    }*/
 
 }
 

@@ -6,7 +6,6 @@ import java.util.List;
 @Entity
 public class Page {
 
-    //attributen
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +13,9 @@ public class Page {
 
     @Column
     private String pageName;
+
+    @OneToOne
+    SearchTopic searchTopic;
 
     //getters en setters
 
@@ -31,6 +33,18 @@ public class Page {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public SearchTopic getSearchTopic() {
+        return searchTopic;
+    }
+
+    public void setSearchTopic(SearchTopic searchTopic) {
+        this.searchTopic = searchTopic;
     }
 }
 

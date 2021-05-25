@@ -26,7 +26,7 @@ public class SearchTopic {
     public void setAgeGroup(String ageGroup) {
         this.ageGroup = ageGroup;
     }
-
+    
     public void setId(Long id) {
         this.id = id;
     }

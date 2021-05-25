@@ -13,13 +13,16 @@ public class MediaOption {
     private String mediaOptionName;
 
     @Column
-    private String mediaOptionAvailable;
+    private Boolean mediaOptionAvailable;
 
-   // @ManyToOne
-   // TakeAction takeAction;
+    @ManyToOne
+    TakeAction takeAction;
 
-  //  @ManyToOne
- //   AidWorker aidWorker;
+    @ManyToOne
+    AidWorker aidWorker;
+
+    @ManyToOne
+    Treatment treatment;
 
     public long getId() {
         return id;
@@ -37,15 +40,15 @@ public class MediaOption {
         this.mediaOptionName = mediaOptionName;
     }
 
-    public String getMediaOptionAvailable() {
+    public Boolean getMediaOptionAvailable() {
         return mediaOptionAvailable;
     }
 
-    public void setMediaOptionAvailable(String mediaOptionAvailable) {
+    public void setMediaOptionAvailable(Boolean mediaOptionAvailable) {
         this.mediaOptionAvailable = mediaOptionAvailable;
     }
 
-  /*  public TakeAction getTakeAction() {
+    public TakeAction getTakeAction() {
         return takeAction;
     }
 
@@ -59,5 +62,13 @@ public class MediaOption {
 
     public void setAidWorker(AidWorker aidWorker) {
         this.aidWorker = aidWorker;
-    }*/
+    }
+
+    public Treatment getTreatment() {
+        return treatment;
+    }
+
+    public void setTreatment(Treatment treatment) {
+        this.treatment = treatment;
+    }
 }

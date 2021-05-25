@@ -27,6 +27,12 @@ public class Treatment {
     List<Expertise> expertise;
 
     @OneToMany
+    List<MediaOption> mediaOption;
+
+    @OneToMany
+    List<MediaInformation> mediaInformation;
+
+    @OneToMany
     List<CostsAidWorkerTreatment> costsAidWorkerTreatment;
 
     public long getId() {
@@ -83,5 +89,21 @@ public class Treatment {
 
     public void setCostsAidWorkerTreatment(List<CostsAidWorkerTreatment> costsAidWorkerTreatment) {
         this.costsAidWorkerTreatment = costsAidWorkerTreatment;
+    }
+
+    public List<MediaOption> getMediaOption() {
+        return mediaOption;
+    }
+
+    public void setMediaOption(List<MediaOption> mediaOption) {
+        this.mediaOption = mediaOption;
+    }
+
+    public List<MediaInformation> getMediaInformation() {
+        return mediaInformation;
+    }
+
+    public void setMediaInformation(List<MediaInformation> mediaInformation) {
+        this.mediaInformation = mediaInformation;
     }
 }

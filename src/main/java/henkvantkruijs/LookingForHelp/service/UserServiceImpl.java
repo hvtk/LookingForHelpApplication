@@ -89,5 +89,4 @@ public class UserServiceImpl implements UserService {
         user.removeAuthority(authorityToRemove);
         userRepository.save(user);
     }
-
 }

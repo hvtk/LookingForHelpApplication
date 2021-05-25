@@ -14,7 +14,7 @@ public class Expertise {
     private String expertiseName;
 
     @Column
-    private String expertiseAvailable;
+    private Boolean expertiseAvailable;
 
     @ManyToOne
     AidWorker aidWorker;
@@ -38,11 +38,11 @@ public class Expertise {
         this.expertiseName = expertiseName;
     }
 
-    public String getExpertiseAvailable() {
+    public Boolean getExpertiseAvailable() {
         return expertiseAvailable;
     }
 
-    public void setExpertiseAvailable(String expertiseAvailable) {
+    public void setExpertiseAvailable(Boolean expertiseAvailable) {
         this.expertiseAvailable = expertiseAvailable;
     }
 

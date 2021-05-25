@@ -34,17 +34,6 @@ public class MediaOptionController {
         return new ResponseEntity<>(mediaOptionService.getMediaOption(id), HttpStatus.OK);
     }
 
-   /* @PostMapping(value = "/mediaOptions")
-    public ResponseEntity<Object> createMediaOption(@RequestBody MediaOption mediaOption) {
-        long newId = mediaOptionService.createMediaOption(mediaOption);
-
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/mediaOptions/{id}")
-                .buildAndExpand(newId).toUri();
-
-        return ResponseEntity.created(location).body(location);
-    }*/
-
-
     @PostMapping(value = "/mediaOptions")
     public ResponseEntity<Object> createMediaOption(@RequestBody MediaOption mediaOption) {
         mediaOptionService.save(mediaOption);

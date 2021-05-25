@@ -22,6 +22,12 @@ public class MediaInformation {
     @ManyToOne
     TakeAction takeAction;
 
+    @ManyToOne
+    AidWorker aidWorker;
+
+    @ManyToOne
+    Treatment treatment;
+
     public long getId() {
         return id;
     }
@@ -46,6 +52,14 @@ public class MediaInformation {
         this.mediaInformationFoundAt = mediaInformationFoundAt;
     }
 
+    public MediaTypes getMediaTypes() {
+        return mediaTypes;
+    }
+
+    public void setMediaTypes(MediaTypes mediaTypes) {
+        this.mediaTypes = mediaTypes;
+    }
+
     public TakeAction getTakeAction() {
         return takeAction;
     }
@@ -54,11 +68,19 @@ public class MediaInformation {
         this.takeAction = takeAction;
     }
 
-    public MediaTypes getMediaTypes() {
-        return mediaTypes;
+    public AidWorker getAidWorker() {
+        return aidWorker;
     }
 
-    public void setMediaTypes(MediaTypes mediaTypes) {
-        this.mediaTypes = mediaTypes;
+    public void setAidWorker(AidWorker aidWorker) {
+        this.aidWorker = aidWorker;
+    }
+
+    public Treatment getTreatment() {
+        return treatment;
+    }
+
+    public void setTreatment(Treatment treatment) {
+        this.treatment = treatment;
     }
 }

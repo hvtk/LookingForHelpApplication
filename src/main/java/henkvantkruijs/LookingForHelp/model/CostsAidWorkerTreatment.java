@@ -13,7 +13,7 @@ public class CostsAidWorkerTreatment {
     private String costsAidWorkerTreatmentPart;
 
     @Column
-    private String answerYesOrNo;
+    private Boolean answerYesOrNo;
 
     @ManyToOne
     AidWorker aidWorker;
@@ -37,11 +37,11 @@ public class CostsAidWorkerTreatment {
         this.costsAidWorkerTreatmentPart = costsAidWorkerTreatmentPart;
     }
 
-    public String getAnswerYesOrNo() {
+    public Boolean getAnswerYesOrNo() {
         return answerYesOrNo;
     }
 
-    public void setAnswerYesOrNo(String answerYesOrNo) {
+    public void setAnswerYesOrNo(Boolean answerYesOrNo) {
         this.answerYesOrNo = answerYesOrNo;
     }
 

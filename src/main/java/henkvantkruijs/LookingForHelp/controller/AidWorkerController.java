@@ -1,6 +1,7 @@
 package henkvantkruijs.LookingForHelp.controller;
 
 import henkvantkruijs.LookingForHelp.model.AidWorker;
+import henkvantkruijs.LookingForHelp.model.User;
 import henkvantkruijs.LookingForHelp.service.AidWorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class AidWorkerController {
         return new ResponseEntity<>("AidWorker created", HttpStatus.CREATED);
     }
 
-    @DeleteMapping(value = "/aidWorkers/{id}")
+      @DeleteMapping(value = "/aidWorkers/{id}")
     public ResponseEntity<Object> deleteAidWorker(@PathVariable("id") long id) {
         aidWorkerService.deleteById(id);
         return new ResponseEntity<>("AidWorker deleted", HttpStatus.OK);

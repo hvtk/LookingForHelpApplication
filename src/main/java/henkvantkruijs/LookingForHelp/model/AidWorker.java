@@ -20,11 +20,20 @@ public class AidWorker {
     @Enumerated(EnumType.STRING)
     private AidWorkerTypes aidWorkerTypes;
 
- //   @ManyToOne
-  //  Problem problem;
+    @ManyToOne
+    Problem problem;
 
-  //  @OneToMany
-  //  List<Expertise> expertise;
+    @OneToMany
+    List<Expertise> expertise;
+
+    @OneToMany
+    List<CostsAidWorkerTreatment> costsAidWorkerTreatment;
+
+    @OneToMany
+    List<MediaOption> mediaOption;
+
+    @OneToMany
+    List<MediaInformation> mediaInformation;
 
     public long getId() {
         return id;
@@ -58,7 +67,7 @@ public class AidWorker {
         this.aidWorkerTypes = aidWorkerTypes;
     }
 
-   /* public Problem getProblem() {
+    public Problem getProblem() {
         return problem;
     }
 
@@ -72,5 +81,29 @@ public class AidWorker {
 
     public void setExpertise(List<Expertise> expertise) {
         this.expertise = expertise;
-    }*/
+    }
+
+    public List<CostsAidWorkerTreatment> getCostsAidWorkerTreatment() {
+        return costsAidWorkerTreatment;
+    }
+
+    public void setCostsAidWorkerTreatment(List<CostsAidWorkerTreatment> costsAidWorkerTreatment) {
+        this.costsAidWorkerTreatment = costsAidWorkerTreatment;
+    }
+
+    public List<MediaOption> getMediaOption() {
+        return mediaOption;
+    }
+
+    public void setMediaOption(List<MediaOption> mediaOption) {
+        this.mediaOption = mediaOption;
+    }
+
+    public List<MediaInformation> getMediaInformation() {
+        return mediaInformation;
+    }
+
+    public void setMediaInformation(List<MediaInformation> mediaInformation) {
+        this.mediaInformation = mediaInformation;
+    }
 }
