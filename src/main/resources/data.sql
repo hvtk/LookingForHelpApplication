@@ -1,8 +1,8 @@
-/*insert into aid_worker (aid_worker_types) values ('Institution');
-insert into aid_worker (aid_worker_types) values ('Organisation');
-insert into aid_worker (aid_worker_types) values ('Specialist');
+insert into aid_worker (aid_worker_name, aid_worker_webb_address, aid_worker_types) values ('Arjen Luijendijk', 'http://www.arjenluijendijk.nl', 'Specialist');
+insert into aid_worker (aid_worker_name, aid_worker_webb_address, aid_worker_types) values ('Cas Lauwen', 'http://www.caslauwen.nl', 'Specialist');
+insert into aid_worker (aid_worker_name, aid_worker_webb_address, aid_worker_types) values ('InspiratieLoods', 'http://www.inspiratie-loods.nl', 'Specialist');
 
-insert into problem (problem_name, problem_types) values ('Self-confidence', 'Emotional-problems');
+/*insert into problem (problem_name, problem_types) values ('Self-confidence', 'Emotional-problems');
 insert into problem (problem_name, problem_types) values ('Stressed-out', 'Emotional-problems');
 insert into problem (problem_name, problem_types) values ('Worry-about','Emotional-problems' );
 insert into problem (problem_name, problem_types) values ('Guilty-feelings', 'Emotional-problems');
@@ -22,10 +22,6 @@ insert into problem (problem_name, problem_types) values ('Sore-muscles-and-join
 insert into problem (problem_name, problem_types) values ('Domestic-violence', 'Physical-violence');
 insert into problem (problem_name, problem_types) values ('Child-abuse', 'Physical-violence');
 insert into problem (problem_name, problem_types) values ('Violence', 'Physical-violence');*/
-
-
-
-
 
 insert into search_topic (age_group) values ('Children');
 insert into search_topic (age_group) values ('Adults');
