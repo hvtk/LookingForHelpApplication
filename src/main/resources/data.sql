@@ -1,27 +1,27 @@
-insert into aid_worker (aid_worker_name, aid_worker_webb_address, aid_worker_types) values ('Arjen Luijendijk', 'http://www.arjenluijendijk.nl', 'Specialist');
-insert into aid_worker (aid_worker_name, aid_worker_webb_address, aid_worker_types) values ('Cas Lauwen', 'http://www.caslauwen.nl', 'Specialist');
-insert into aid_worker (aid_worker_name, aid_worker_webb_address, aid_worker_types) values ('InspiratieLoods', 'http://www.inspiratie-loods.nl', 'Specialist');
+insert into aid_worker (aid_worker_name, aid_worker_webb_address, aid_worker_types) values ('Arjen Luijendijk', 'http://www.arjenluijendijk.nl', 'SPECIALIST');
+insert into aid_worker (aid_worker_name, aid_worker_webb_address, aid_worker_types) values ('Cas Lauwen', 'http://www.caslauwen.nl', 'SPECIALIST');
+insert into aid_worker (aid_worker_name, aid_worker_webb_address, aid_worker_types) values ('InspiratieLoods', 'http://www.inspiratie-loods.nl', 'SPECIALIST');
 
-/*insert into problem (problem_name, problem_types) values ('Self-confidence', 'Emotional-problems');
-insert into problem (problem_name, problem_types) values ('Stressed-out', 'Emotional-problems');
-insert into problem (problem_name, problem_types) values ('Worry-about','Emotional-problems' );
-insert into problem (problem_name, problem_types) values ('Guilty-feelings', 'Emotional-problems');
-insert into problem (problem_name, problem_types) values ('Loneliness', 'Emotional-problems');
-insert into problem (problem_name, problem_types) values ('Fear', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Panic', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Depression', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Addiction', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Burnout', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Suicide', 'Mental-health-problems');
-insert into problem (problem_name, problem_types) values ('Abdominal-pains', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Headache', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Constant-tiredness', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Palpitations', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Intestinal-complains','Physical-complaints' );
-insert into problem (problem_name, problem_types) values ('Sore-muscles-and-joints', 'Physical-complaints');
-insert into problem (problem_name, problem_types) values ('Domestic-violence', 'Physical-violence');
-insert into problem (problem_name, problem_types) values ('Child-abuse', 'Physical-violence');
-insert into problem (problem_name, problem_types) values ('Violence', 'Physical-violence');*/
+/*insert into problem (problem_name, problem_types) values ('Self-confidence', 'EMOTIONALPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Stressed-out', 'EMOTIONALPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Worry-about','EMOTIONALPROBLEMS' );
+insert into problem (problem_name, problem_types) values ('Guilty-feelings', 'EMOTIONALPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Loneliness', 'EMOTIONALPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Fear', 'MENTALHEALTHPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Panic', 'MENTALHEALTHPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Depression', 'MENTALHEALTHPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Addiction', 'MENTALHEALTHPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Burnout', 'MENTALHEALTHPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Suicide', 'MENTALHEALTHPROBLEMS');
+insert into problem (problem_name, problem_types) values ('Abdominal-pains', 'PHYSICALCOMPLAINTS');
+insert into problem (problem_name, problem_types) values ('Headache', 'PHYSICALCOMPLAINTS');
+insert into problem (problem_name, problem_types) values ('Constant-tiredness', 'PHYSICALCOMPLAINTS');
+insert into problem (problem_name, problem_types) values ('Palpitations', 'PHYSICALCOMPLAINTS');
+insert into problem (problem_name, problem_types) values ('Intestinal-complains','PHYSICALCOMPLAINTS' );
+insert into problem (problem_name, problem_types) values ('Sore-muscles-and-joints', 'PHYSICALCOMPLAINTS');
+insert into problem (problem_name, problem_types) values ('Domestic-violence', 'PHYSICALVIOLENCE');
+insert into problem (problem_name, problem_types) values ('Child-abuse', 'PHYSICALVIOLENCE');
+insert into problem (problem_name, problem_types) values ('Violence', 'PHYSICALVIOLENCE');*/
 
 insert into search_topic (age_group) values ('Children');
 insert into search_topic (age_group) values ('Adults');
@@ -37,21 +37,21 @@ insert into page (page_name) values ('Sign-up');
 insert into page (page_name) values ('Home');
 insert into page (page_name) values ('After-search-query');
 
-insert into take_action (take_action_types) values ('Testing');
-insert into take_action (take_action_types) values ('Activities');
-insert into take_action (take_action_types) values ('Research-information');
-insert into take_action (take_action_types) values ('Can-do-it-yourself');
+insert into take_action (take_action_types) values ('TESTING');
+insert into take_action (take_action_types) values ('ACTIVITIES');
+insert into take_action (take_action_types) values ('RESEARCHINFORMATION');
+insert into take_action (take_action_types) values ('CANDOITYOURSELF');
 
-insert into treatment (treatment_types) values ('Therapy');
-insert into treatment (treatment_types) values ('Clinics');
-insert into treatment (treatment_types) values ('Coaching');
+insert into treatment (treatment_types) values ('THERAPY');
+insert into treatment (treatment_types) values ('CLINICS');
+insert into treatment (treatment_types) values ('COACHING');
 
-insert into media_information (media_types) values ('Youtube');
-insert into media_information (media_types) values ('Communities');
-insert into media_information (media_types) values ('Video');
-insert into media_information (media_types) values ('Twitter');
-insert into media_information (media_types) values ('Facebook');
-insert into media_information (media_types) values ('Forum');
+insert into media_information (media_types) values ('YOUTUBE');
+insert into media_information (media_types) values ('COMMUNITIES');
+insert into media_information (media_types) values ('VIDEO');
+insert into media_information (media_types) values ('TWITTER');
+insert into media_information (media_types) values ('FACEBOOK');
+insert into media_information (media_types) values ('FORUM');
 
 /*insert into media_option (media_option_name) values ('ChatOption');
 insert into media_option (media_option_name) values ('WhatsappOption');

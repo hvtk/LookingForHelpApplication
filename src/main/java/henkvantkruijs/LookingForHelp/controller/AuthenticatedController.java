@@ -48,7 +48,7 @@ public class AuthenticatedController {
         catch (BadCredentialsException ex) {
             throw new Exception("Incorrect username or password", ex);
         }
-        // Opvangen foutieve inloggegevens deze methode is toegevoegd
+
         catch (AuthenticationException ex) {
             throw new Exception("Incorrect username or password", ex);
         }

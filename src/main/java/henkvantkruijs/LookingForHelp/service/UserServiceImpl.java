@@ -52,13 +52,10 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(username);
     }
 
-    // update the database table user with the user information
     @Override
     public void updateUser(String username, User newUser) {
         if (!userRepository.existsById(username)) throw new RecordNotFoundException();
         User user = userRepository.findById(username).get();
-        //user.setPassword(newUser.getPassword());
-        // Sla de gehashte versie van het wachtwoord op ipv de plaintext versie
         user.setPassword((new BCryptPasswordEncoder()).encode(newUser.getPassword()));
         user.setPostalCode(newUser.getPostalCode());
         user.setAge(newUser.getAge());

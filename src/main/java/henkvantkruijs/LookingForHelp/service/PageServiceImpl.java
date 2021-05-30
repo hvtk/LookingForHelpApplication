@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-// hierin word de body geimplementeerd voor de methodes die in de service zijn gedefinieerd.
+
 @Service
 public class PageServiceImpl implements PageService {
 
@@ -25,7 +25,7 @@ public class PageServiceImpl implements PageService {
         return pageRepository.findAllByPageNameStartsWith(pageName);
     }
 
-    // de return is optioneel (omdat het kan zijn dat je geen id vind.
+
     @Override
     public Page getPage(long id) {
         if (pageRepository.existsById(id)) {

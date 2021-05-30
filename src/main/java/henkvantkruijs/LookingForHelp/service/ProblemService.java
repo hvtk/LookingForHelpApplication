@@ -4,7 +4,7 @@ import henkvantkruijs.LookingForHelp.model.Problem;
 
 import java.util.List;
 
-public interface ProblemService {   // hierin ga je definieren wat je allemaal met de problemen wil doen.
+public interface ProblemService {
 
     List<Problem> getAllProblems();
     Problem getProblem(long id);
