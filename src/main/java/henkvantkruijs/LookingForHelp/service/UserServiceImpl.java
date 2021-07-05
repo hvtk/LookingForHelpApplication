@@ -60,6 +60,7 @@ public class UserServiceImpl implements UserService {
         user.setPostalCode(newUser.getPostalCode());
         user.setAge(newUser.getAge());
         user.setApikey(newUser.getApikey());
+        user.setOnImageUpload(newUser.getOnImageUpload());
         userRepository.save(user);
     }
 
