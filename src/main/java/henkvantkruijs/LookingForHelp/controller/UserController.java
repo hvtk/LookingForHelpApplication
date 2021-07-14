@@ -4,16 +4,23 @@ import henkvantkruijs.LookingForHelp.exception.BadRequestException;
 import henkvantkruijs.LookingForHelp.model.User;
 import henkvantkruijs.LookingForHelp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URI;
 import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
+
+    private static final String storageLocation = "/tmp/";
 
     @Autowired
     private UserService userService;
@@ -26,6 +33,33 @@ public class UserController {
     @GetMapping(value = "/{username}")
     public ResponseEntity<Object> getUser(@PathVariable("username") String username) {
         return ResponseEntity.ok().body(userService.getUser(username));
+    }
+
+    // Route om avatar te uploaden, deze ontvangt een bestand via de multipart form data, en verplaatst deze naar de storagefolder die bovenaan gedefinieerd is
+    @PostMapping(value = "/{username}/avatar")
+    public ResponseEntity<Object> uploadFile(
+            @PathVariable("username") String username,
+            @RequestParam("file") MultipartFile multipartFile) throws IOException {
+        multipartFile.transferTo(new File(storageLocation + username + ".jpg"));
+        return ResponseEntity.ok().body("Upload geslaagd!");
+    }
+
+    // https://stackoverflow.com/questions/40557637/how-to-return-an-image-in-spring-boot-controller-and-serve-like-a-file-system
+    // Haal de avatar op
+    @GetMapping(value = "/{username}/avatar")
+    public ResponseEntity<byte[]> uploadFile(
+            @PathVariable("username") String username) throws IOException {
+        // Open het bestand
+        File file = new File(storageLocation + username + ".jpg");
+        FileInputStream fis = new FileInputStream(file);
+
+        // Lees alle data
+        byte[] data = new byte[(int) file.length()];
+        fis.read(data);
+        fis.close();
+
+        // Schrijf de afbeelding naar de response, en zet de content type op afbeelding/jpg
+        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(data);
     }
 
     @PostMapping(value = "/signup")
