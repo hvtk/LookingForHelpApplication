@@ -31,9 +31,6 @@ public class User {
     @Column
     private String age;
 
-    @Column
-    private Byte[] onImageUpload;
-
     @OneToMany(
             targetEntity = henkvantkruijs.LookingForHelp.model.Authority.class,
             mappedBy = "username",
@@ -80,13 +77,5 @@ public class User {
     }
     public void removeAuthority(Authority authority) {
         this.authorities.remove(authority);
-    }
-
-    public Byte[] getOnImageUpload() {
-        return onImageUpload;
-    }
-
-    public void setOnImageUpload(Byte[] onImageUpload) {
-        this.onImageUpload = onImageUpload;
     }
 }
