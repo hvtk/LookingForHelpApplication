@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.controller;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.CostsAidWorkerTreatment;
 import henkvantkruijs.LookingForHelp.model.MediaOption;
 import henkvantkruijs.LookingForHelp.service.CostsAidWorkerTreatmentService;
@@ -45,5 +46,12 @@ public class CostsAidWorkerTreatmentController {
         costsAidWorkerTreatmentService.deleteById(id);
         return new ResponseEntity<>("CostsAidWorkerTreatment deleted", HttpStatus.OK);
     }
+
+    @PutMapping(value = "/costsAidWorkerTreatment/{id}")
+    public ResponseEntity<Object> updateCostsAidWorkerTreatment(@PathVariable("id") long id, @RequestBody CostsAidWorkerTreatment costsAidWorkerTreatment) {
+        costsAidWorkerTreatmentService.updateCostsAidWorkerTreatment(id, costsAidWorkerTreatment);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
 

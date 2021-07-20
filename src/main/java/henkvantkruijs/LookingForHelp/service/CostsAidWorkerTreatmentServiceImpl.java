@@ -1,6 +1,9 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.DatabaseErrorException;
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
+import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.CostsAidWorkerTreatment;
 import henkvantkruijs.LookingForHelp.model.MediaOption;
 import henkvantkruijs.LookingForHelp.repository.CostsAidWorkerTreatmentRepository;
@@ -45,5 +48,24 @@ public class CostsAidWorkerTreatmentServiceImpl implements CostsAidWorkerTreatme
     public void deleteById(long id) {
         costsAidWorkerTreatmentRepository.deleteById(id);
     }
+
+    @Override
+    public void updateCostsAidWorkerTreatment(long id, CostsAidWorkerTreatment costsAidWorkerTreatment) {
+        if (costsAidWorkerTreatmentRepository.existsById(id)) {
+            try {
+                CostsAidWorkerTreatment existingCostsAidWorkerTreatment = costsAidWorkerTreatmentRepository.findById(id).orElse(null);
+                existingCostsAidWorkerTreatment.setCostsAidWorkerTreatmentPart(costsAidWorkerTreatment.getCostsAidWorkerTreatmentPart());
+                existingCostsAidWorkerTreatment.setAnswerYesOrNo(costsAidWorkerTreatment.getAnswerYesOrNo());
+                costsAidWorkerTreatmentRepository.save(existingCostsAidWorkerTreatment);
+            }
+            catch (Exception ex) {
+                throw new DatabaseErrorException();
+            }
+        }
+        else {
+            throw new RecordNotFoundException();
+        }
+    }
+
 }
 
