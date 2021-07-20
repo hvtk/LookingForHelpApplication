@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.controller;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.TakeAction;
 import henkvantkruijs.LookingForHelp.service.TakeActionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,12 @@ public class TakeActionController {
         takeActionService.deleteById(id);
         return new ResponseEntity<>("TakeAction deleted", HttpStatus.OK);
     }
+
+    @PutMapping(value = "/takeActions/{id}")
+    public ResponseEntity<Object> updateTakeAction(@PathVariable("id") long id, @RequestBody TakeAction takeAction) {
+        takeActionService.updateTakeAction(id, takeAction);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
 

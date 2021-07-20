@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.Problem;
 
 import java.util.List;
@@ -11,5 +12,6 @@ public interface ProblemService {
     List<Problem> getProblemsProblemNameStartsWith(String problemName);
     void save(Problem problem);
     void deleteById(long id);
+    void updateProblem(long id, Problem problem);
 }
 

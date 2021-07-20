@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.controller;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.Expertise;
 import henkvantkruijs.LookingForHelp.service.ExpertiseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,12 @@ public class ExpertiseController {
         expertiseService.deleteById(id);
         return new ResponseEntity<>("Expertise deleted", HttpStatus.OK);
     }
+
+    @PutMapping(value = "/expertises/{id}")
+    public ResponseEntity<Object> updateExpertises(@PathVariable("id") long id, @RequestBody Expertise expertise) {
+        expertiseService.updateExpertise(id, expertise);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
 

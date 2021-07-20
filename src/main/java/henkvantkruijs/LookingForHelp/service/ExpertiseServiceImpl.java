@@ -1,6 +1,9 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.DatabaseErrorException;
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
+import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.Expertise;
 import henkvantkruijs.LookingForHelp.model.TakeAction;
 import henkvantkruijs.LookingForHelp.repository.ExpertiseRepository;
@@ -45,5 +48,24 @@ public class ExpertiseServiceImpl implements ExpertiseService {
     public void deleteById(long id) {
         expertiseRepository.deleteById(id);
     }
+
+    @Override
+    public void updateExpertise(long id, Expertise expertise) {
+        if (expertiseRepository.existsById(id)) {
+            try {
+                Expertise existingExpertise = expertiseRepository.findById(id).orElse(null);
+                existingExpertise.setExpertiseName(expertise.getExpertiseName());
+                existingExpertise.setExpertiseAvailable(expertise.getExpertiseAvailable());
+                expertiseRepository.save(existingExpertise);
+            }
+            catch (Exception ex) {
+                throw new DatabaseErrorException();
+            }
+        }
+        else {
+            throw new RecordNotFoundException();
+        }
+    }
+
 }
 

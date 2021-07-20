@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.controller;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.MediaOption;
 import henkvantkruijs.LookingForHelp.service.MediaOptionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,13 @@ public class MediaOptionController {
         mediaOptionService.deleteById(id);
         return new ResponseEntity<>("MediaOption deleted", HttpStatus.OK);
     }
+
+    @PutMapping(value = "/mediaOption/{id}")
+    public ResponseEntity<Object> updateMediaOption(@PathVariable("id") long id, @RequestBody MediaOption mediaOption) {
+        mediaOptionService.updateMediaOption(id, mediaOption);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
+
 

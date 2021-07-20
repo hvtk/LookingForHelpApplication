@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.Expertise;
 import henkvantkruijs.LookingForHelp.model.TakeAction;
 
@@ -12,5 +13,6 @@ public interface ExpertiseService {
     List<Expertise> getExpertisesExpertiseNameStartsWith(String expertiseName);
     void save(Expertise expertise);
     void deleteById(long id);
+    void updateExpertise(long id, Expertise expertise);
 
 }

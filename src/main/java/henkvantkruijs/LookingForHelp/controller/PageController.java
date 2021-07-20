@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.controller;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.Page;
 import henkvantkruijs.LookingForHelp.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,4 +44,11 @@ public class PageController {
         pageService.deleteById(id);
         return new ResponseEntity<>("Page deleted", HttpStatus.OK);
     }
+
+    @PutMapping(value = "/pages/{id}")
+    public ResponseEntity<Object> updatePage(@PathVariable("id") long id, @RequestBody Page page) {
+        pageService.updatePage(id, page);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

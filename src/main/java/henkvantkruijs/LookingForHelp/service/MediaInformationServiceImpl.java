@@ -1,6 +1,9 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.DatabaseErrorException;
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
+import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.MediaInformation;
 import henkvantkruijs.LookingForHelp.repository.MediaInformationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +46,24 @@ public class MediaInformationServiceImpl implements MediaInformationService {
     public void deleteById(long id) {
         mediaInformationRepository.deleteById(id);
     }
+
+    @Override
+    public void updateMediaInformation(long id, MediaInformation mediaInformation) {
+        if (mediaInformationRepository.existsById(id)) {
+            try {
+                MediaInformation existingMediaInformation = mediaInformationRepository.findById(id).orElse(null);
+                existingMediaInformation.setMediaInformationName(mediaInformation.getMediaInformationName());
+                existingMediaInformation.setMediaInformationFoundAt(mediaInformation.getMediaInformationFoundAt());
+                mediaInformationRepository.save(existingMediaInformation);
+            }
+            catch (Exception ex) {
+                throw new DatabaseErrorException();
+            }
+        }
+        else {
+            throw new RecordNotFoundException();
+        }
+    }
+
 }
 

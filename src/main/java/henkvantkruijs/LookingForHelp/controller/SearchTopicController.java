@@ -1,6 +1,7 @@
 package henkvantkruijs.LookingForHelp.controller;
 
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.SearchTopic;
 import henkvantkruijs.LookingForHelp.service.SearchTopicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,11 @@ public class SearchTopicController {
     public ResponseEntity<Object> deleteSearchTopic(@PathVariable("id") long id) {
         searchTopicService.deleteById(id);
         return new ResponseEntity<>("SearchTopic deleted", HttpStatus.OK);
+    }
+
+    @PutMapping(value = "/searchTopics/{id}")
+    public ResponseEntity<Object> updateSearchTopic(@PathVariable("id") long id, @RequestBody SearchTopic searchTopic) {
+        searchTopicService.updateSearchTopic(id, searchTopic);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

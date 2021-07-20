@@ -1,7 +1,9 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.DatabaseErrorException;
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
 import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.TakeAction;
 import henkvantkruijs.LookingForHelp.repository.TakeActionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +46,24 @@ public class TakeActionServiceImpl implements TakeActionService {
     public void deleteById(long id) {
         takeActionRepository.deleteById(id);
     }
+
+    @Override
+    public void updateTakeAction(long id, TakeAction takeAction) {
+        if (takeActionRepository.existsById(id)) {
+            try {
+                TakeAction existingTakeAction = takeActionRepository.findById(id).orElse(null);
+                existingTakeAction.setTakeActionName(takeAction.getTakeActionName());
+                existingTakeAction.setTakeActionWebbAddress(takeAction.getTakeActionWebbAddress());
+                takeActionRepository.save(existingTakeAction);
+            }
+            catch (Exception ex) {
+                throw new DatabaseErrorException();
+            }
+        }
+        else {
+            throw new RecordNotFoundException();
+        }
+    }
+
 }
 

@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.controller;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.MediaInformation;
 import henkvantkruijs.LookingForHelp.service.MediaInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,12 @@ public class MediaInformationController {
         mediaInformationService.deleteById(id);
         return new ResponseEntity<>("MediaInformation deleted", HttpStatus.OK);
     }
+
+    @PutMapping(value = "/mediaInformation/{id}")
+    public ResponseEntity<Object> updateMediaInformation(@PathVariable("id") long id, @RequestBody MediaInformation mediaInformation) {
+        mediaInformationService.updateMediaInformation(id, mediaInformation);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
 

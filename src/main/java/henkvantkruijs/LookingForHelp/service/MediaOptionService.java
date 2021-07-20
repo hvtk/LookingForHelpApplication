@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.MediaOption;
 import henkvantkruijs.LookingForHelp.model.Page;
 
@@ -12,5 +13,6 @@ public interface MediaOptionService {
     List<MediaOption> getMediaOptionsMediaOptionNameStartsWith(String mediaOptionName);
     void save(MediaOption mediaOption);
     void deleteById(long id);
+    void updateMediaOption(long id, MediaOption mediaOption);
 }
 

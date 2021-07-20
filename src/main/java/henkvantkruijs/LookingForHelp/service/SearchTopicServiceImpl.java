@@ -1,8 +1,11 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.DatabaseErrorException;
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
 import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.SearchTopic;
+import henkvantkruijs.LookingForHelp.model.TakeAction;
 import henkvantkruijs.LookingForHelp.repository.SearchTopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,4 +47,22 @@ public class SearchTopicServiceImpl implements SearchTopicService {
     public void deleteById(long id) {
         searchTopicRepository.deleteById(id);
     }
+
+    @Override
+    public void updateSearchTopic(long id, SearchTopic searchTopic) {
+        if (searchTopicRepository.existsById(id)) {
+            try {
+                SearchTopic existingSearchTopic = searchTopicRepository.findById(id).orElse(null);
+                existingSearchTopic.setAgeGroup(searchTopic.getAgeGroup());
+                searchTopicRepository.save(existingSearchTopic);
+            }
+            catch (Exception ex) {
+                throw new DatabaseErrorException();
+            }
+        }
+        else {
+            throw new RecordNotFoundException();
+        }
+    }
 }
+

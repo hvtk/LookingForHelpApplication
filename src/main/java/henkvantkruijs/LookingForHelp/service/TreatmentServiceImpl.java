@@ -1,6 +1,9 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.exception.DatabaseErrorException;
 import henkvantkruijs.LookingForHelp.exception.IdNotFoundException;
+import henkvantkruijs.LookingForHelp.exception.RecordNotFoundException;
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.TakeAction;
 import henkvantkruijs.LookingForHelp.model.Treatment;
 import henkvantkruijs.LookingForHelp.repository.TakeActionRepository;
@@ -44,6 +47,24 @@ public class TreatmentServiceImpl implements TreatmentService {
     @Override
     public void deleteById(long id) {
         treatmentRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateTreatment(long id, Treatment treatment) {
+        if (treatmentRepository.existsById(id)) {
+            try {
+                Treatment existingTreatment = treatmentRepository.findById(id).orElse(null);
+                existingTreatment.setTreatmentName(treatment.getTreatmentName());
+                existingTreatment.setTreatmentWebbAddress(treatment.getTreatmentWebbAddress());
+                treatmentRepository.save(existingTreatment);
+            }
+            catch (Exception ex) {
+                throw new DatabaseErrorException();
+            }
+        }
+        else {
+            throw new RecordNotFoundException();
+        }
     }
 }
 

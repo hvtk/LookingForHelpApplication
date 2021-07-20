@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.controller;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.TakeAction;
 import henkvantkruijs.LookingForHelp.model.Treatment;
 import henkvantkruijs.LookingForHelp.service.TakeActionService;
@@ -45,5 +46,12 @@ public class TreatmentController {
         treatmentService.deleteById(id);
         return new ResponseEntity<>("Treatment deleted", HttpStatus.OK);
     }
+
+    @PutMapping(value = "/treatments/{id}")
+    public ResponseEntity<Object> updateTreatment(@PathVariable("id") long id, @RequestBody Treatment treatment) {
+        treatmentService.updateTreatment(id, treatment);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
 

@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.Page;
 
 import java.util.List;
@@ -12,5 +13,6 @@ public interface PageService {
     List<Page> getPagesPageNameStartsWith(String pageName);
     void save(Page page);
     void deleteById(long id);
+    void updatePage(long id, Page page);
 }
 

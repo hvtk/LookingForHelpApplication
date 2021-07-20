@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.service;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.MediaInformation;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface MediaInformationService {
     List<MediaInformation> getMediaInfoMediaInformationNameStartsWith(String mediaInformationName);
     void save(MediaInformation mediaInformation);
     void deleteById(long id);
+    void updateMediaInformation(long id, MediaInformation mediaInformation);
 }

@@ -1,5 +1,6 @@
 package henkvantkruijs.LookingForHelp.controller;
 
+import henkvantkruijs.LookingForHelp.model.AidWorker;
 import henkvantkruijs.LookingForHelp.model.Problem;
 
 
@@ -46,4 +47,11 @@ public class ProblemController {
         problemService.deleteById(id);
         return new ResponseEntity<>("Problem deleted", HttpStatus.OK);
     }
+
+    @PutMapping(value = "/problems/{id}")
+    public ResponseEntity<Object> updateProblem(@PathVariable("id") long id, @RequestBody Problem problem) {
+        problemService.updateProblem(id, problem);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
