@@ -35,7 +35,6 @@ public class UserController {
         return ResponseEntity.ok().body(userService.getUser(username));
     }
 
-    // Route om avatar te uploaden, deze ontvangt een bestand via de multipart form data, en verplaatst deze naar de storagefolder die bovenaan gedefinieerd is
     @PostMapping(value = "/{username}/avatar")
     public ResponseEntity<Object> uploadFile(
             @PathVariable("username") String username,
@@ -44,21 +43,17 @@ public class UserController {
         return ResponseEntity.ok().body("Upload geslaagd!");
     }
 
-    // https://stackoverflow.com/questions/40557637/how-to-return-an-image-in-spring-boot-controller-and-serve-like-a-file-system
-    // Haal de avatar op
     @GetMapping(value = "/{username}/avatar")
     public ResponseEntity<byte[]> uploadFile(
             @PathVariable("username") String username) throws IOException {
-        // Open het bestand
+
         File file = new File(storageLocation + username + ".jpg");
         FileInputStream fis = new FileInputStream(file);
 
-        // Lees alle data
         byte[] data = new byte[(int) file.length()];
         fis.read(data);
         fis.close();
 
-        // Schrijf de afbeelding naar de response, en zet de content type op afbeelding/jpg
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(data);
     }
 
