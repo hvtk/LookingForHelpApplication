@@ -54,6 +54,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/customers/**").hasRole("USER")
                 .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/admin/**").hasRole("USER")
+                .antMatchers("/henk/**").hasRole("ADMIN")
+                .antMatchers("/henk/**").hasRole("USER")
                 .antMatchers("/users/signup").permitAll()
                 .antMatchers("/users/*/avatar").permitAll()
                 .antMatchers("/users/**").authenticated()//.hasRole("ADMIN")
@@ -66,5 +69,4 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
     }
-
 }
